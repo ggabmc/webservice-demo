@@ -1,4 +1,4 @@
-docker build --tag=ggabmc/webservice-demo ./dockerfile ./webservice-demo
+docker build -t ggabmc/webservice-demo ./Dockerfile ./webservice-demo
 
 docker push ggabmc/webservice-demo
 
