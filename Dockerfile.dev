@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY  webservice-demo-0.0.1-SNAPSHOT.jar webservice-demo.jar
 
-ENTRYPOINT ["test" , "webservice-demo.jar"]
+CMD ["npm", "run", "start"]
