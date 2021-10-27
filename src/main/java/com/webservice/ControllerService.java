@@ -12,6 +12,8 @@ public class ControllerService {
 
     String[] brands = {"Rolex","Omega","Tag Heuer","Hublot"};
 
+    String[] rolexModels = {"Rolex GMT Master II Batman", "Rolex GMT Master II Pepsi", "Rolex Submarine Date", "Rolex Daytona Gold"};
+
     @GetMapping("/healthcheck")
     public String healthCheck(){
         return "webservice-demo is up and running!";
@@ -20,6 +22,11 @@ public class ControllerService {
     @GetMapping("/watch/brands")
     public List getBrands(){
         return Arrays.asList(brands);
+    }
+
+    @GetMapping("/watch/rolex/models")
+    public List getRolexModels(){
+        return Arrays.asList(rolexModels);
     }
 
 }
