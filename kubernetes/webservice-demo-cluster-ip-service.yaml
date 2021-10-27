@@ -9,7 +9,7 @@ spec:
   type: ClusterIP
 
   selector:
-    component: web
+    component: ws
 
   ports:
     - port: 8080

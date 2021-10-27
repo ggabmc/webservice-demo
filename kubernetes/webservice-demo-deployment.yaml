@@ -10,12 +10,12 @@ spec:
 
   selector:
     matchLabels:
-      component: web
+      component: ws
 
   template:
     metadata:
       labels:
-        component: web
+        component: ws
 
     spec:
       containers:
