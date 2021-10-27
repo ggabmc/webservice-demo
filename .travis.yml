@@ -22,8 +22,16 @@ before_install:
 #script:
 #  - docker run -e CI=true ggabmc/webservice-demo npm test
 
+  - docker build -t ggabmc/webservice-demo -f ./Dockerfile .
+  - docker push ggabmc/webservice-demo
+  - kubectl apply -f kubernetes
+
 deploy:
-  provider: script
-  script: bash deploy.sh
   on:
     branch: master
+
+#deploy:
+#  provider: script
+#  script: bash deploy.sh
+#  on:
+#    branch: master
