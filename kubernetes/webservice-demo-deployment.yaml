@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: webservice-demo-deployment
+  name: ws-deployment
 
 spec:
   replicas: 3    # creating 1 pod wit all the next template down here
@@ -19,7 +19,7 @@ spec:
 
     spec:
       containers:
-        - name: webservice-demo
+        - name: webservice
           image: ggabmc/webservice-demo
           ports:
             - containerPort: 3000
