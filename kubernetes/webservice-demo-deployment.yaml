@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: webservice-demo-deployment
+
+spec:
+  replicas: 3    # creating 1 pod wit all the next template down here
+
+  selector:
+    matchLabels:
+      component: ws
+
+  template:
+    metadata:
+      labels:
+        component: ws
+
+    spec:
+      containers:
+        - name: webservice-demo
+          image: ggabmc/webservice-demo
+          ports:
+            - containerPort: 3000
