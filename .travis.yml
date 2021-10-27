@@ -19,8 +19,8 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t ggabmc/webservice-demo ./Dockerfile ./webservice-demo
 
-script:
-  - docker run -e CI=true ggabmc/webservice-demo npm test
+#script:
+#  - docker run -e CI=true ggabmc/webservice-demo npm test
 
 deploy:
   provider: script
