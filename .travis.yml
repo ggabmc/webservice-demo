@@ -13,9 +13,9 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set project ws-kubernetes-test
-  - gcloud config set compute/zone us-west1-a
-  - gcloud container clusters get-credentials ws-cluster-test
+  - gcloud config set project ws-kubernetes
+  - gcloud config set compute/zone us-west1-c
+  - gcloud container clusters get-credentials ws-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   #- docker build -t ggabmc/webservice-demo -f ./Dockerfile.dev .
 
