@@ -10,16 +10,16 @@ spec:
 
   selector:
     matchLabels:
-      component: ws
+      component: web
 
   template:
     metadata:
       labels:
-        component: ws
+        component: web
 
     spec:
       containers:
         - name: webservice
           image: ggabmc/webservice-demo
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
