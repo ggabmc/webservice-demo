@@ -27,6 +27,8 @@ before_install:
   - kubectl apply -f kubernetes
 
 deploy:
+#  provider: script
+#  script: bash ./deploy.sh
   on:
     branch: master
 
