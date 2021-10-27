@@ -12,18 +12,18 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-#  - gcloud auth activate-service-account --key-file service-account.json
-#  - gcloud config set project webservice-docker-kubernetes
-#  - gcloud config set compute/zone us-west1-c
-#  - gcloud container clusters get-credentials webservice-cluster
-#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-#  - docker build --tag=ggabmc/webservice-demo .
-#
-#script:
-#  - docker run -e CI=true ggabmc/webservice-demo npm test
-#
-#deploy:
-#  provider: script
-#  script: bash ./deploy.sh
-#  on:
-#    branch: master
+  - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud config set project webservice-docker-kubernetes
+  - gcloud config set compute/zone us-west1-c
+  - gcloud container clusters get-credentials webservice-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build --tag=ggabmc/webservice-demo .
+
+script:
+  - docker run -e CI=true ggabmc/webservice-demo npm test
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
