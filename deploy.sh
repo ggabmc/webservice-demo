@@ -1,4 +1,4 @@
-docker build -t ggabmc/webservice-demo -f ./Dockerfile ./webservice-demo
+docker build -t ggabmc/webservice-demo -f ./Dockerfile
 
 docker push ggabmc/webservice-demo
 
