@@ -17,13 +17,13 @@ before_install:
   - gcloud config set compute/zone us-west1-c
   - gcloud container clusters get-credentials ws-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t ggabmc/webservice-demo -f ./Dockerfile.dev .
+  #- docker build -t ggabmc/webservice-demo -f ./Dockerfile.dev .
 
 #script:
 #  - docker run -e CI=true ggabmc/webservice-demo npm test
 
 deploy:
   provider: script
-  script: bash ./deploy.sh
+  script: bash deploy.sh
   on:
     branch: master
