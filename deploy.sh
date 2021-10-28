@@ -3,8 +3,10 @@ docker build --tag=ggabmc/webservice-demo:latest --tag=ggabmc/webservice-demo:$S
 docker push ggabmc/webservice-demo:latest
 docker push ggabmc/webservice-demo:$SHA
 
+kubectl set image deployments/ws-deployment webservice=ggabmc/webservice-demo:$SHA
+
 kubectl apply -f kubernetes
 
-kubectl set image deployments/ws-deployment webservice=ggabmc/webservice-demo:$SHA
+
 
 
