@@ -22,8 +22,7 @@ before_install:
   - docker build --tag=ggabmc/webservice-demo -f ./Dockerfile.dev .
 
 script:
-  - docker run -e CI=true ggabmc/react-test mvn clean package
-
+  - docker run -e CI=true ggabmc/react-test npm test
 
 deploy:
   provider: script
