@@ -13,7 +13,8 @@ public class ControllerService {
     String[] brands = {"Rolex","Omega","Tag Heuer","Hublot"};
 
     String[] rolexModels = {"Rolex GMT Master II Batman", "Rolex GMT Master II Pepsi",
-            "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear", "Rolex Submarine Hulk"};
+            "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear", "Rolex Submarine Hulk",
+    "Rolex Submarine Bluesy"};
 
     @GetMapping("/healthcheck")
     public String healthCheck(){
