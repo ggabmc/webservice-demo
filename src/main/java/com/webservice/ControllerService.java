@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class ControllerService {
 
-    String[] brands = {"Rolex","Omega","Tag Heuer","Hublot"};
+    String[] brands = {"Rolex","Omega","Tag Heuer","Hublot","Gucci"};
 
     String[] rolex = {"Rolex GMT Master II Batman", "Rolex GMT Master II Pepsi",
             "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear", "Rolex Submarine Hulk",
