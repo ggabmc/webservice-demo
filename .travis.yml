@@ -21,8 +21,8 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build --tag=ggabmc/webservice-demo -f ./Dockerfile.dev .
 
-script:
-  - docker run -e CI=true ggabmc/webservice-demo mvn clean package
+#script:
+#  - docker run -e CI=true ggabmc/webservice-demo mvn clean package
 
 deploy:
   provider: script
