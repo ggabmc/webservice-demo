@@ -7,4 +7,4 @@ docker push ggabmc/webservice-demo:$SHA
 
 kubectl apply -f kubernetes
 
-kubectl set image deployments/ws-deployment ws=ggabmc/webservice-demo:$SHA
+kubectl set image deployments/ws-deployment webservice=ggabmc/webservice-demo:$SHA
