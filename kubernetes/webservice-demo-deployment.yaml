@@ -6,7 +6,7 @@ metadata:
   name: ws-deployment
 
 spec:
-  replicas: 3    # creating 3 pod wit all the next template down here
+  replicas: 1    # creating 3 pod wit all the next template down here
 
   selector:
     matchLabels:
