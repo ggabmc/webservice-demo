@@ -16,7 +16,7 @@ public class ControllerService {
             "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear",
             "Rolex Submarine Hulk", "Rolex Submarine Bluesy"};
 
-    String[] omega = {"Speedmaster Moon Watch","Omega Seamaster"};
+    String[] omega = {"Speedmaster Moon Watch","Omega Seamaster","Speedmaster Race"};
 
     @GetMapping("/healthcheck")
     public String healthCheck(){
