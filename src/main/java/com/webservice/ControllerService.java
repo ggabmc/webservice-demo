@@ -13,8 +13,10 @@ public class ControllerService {
     String[] brands = {"Rolex","Omega","Tag Heuer","Hublot","Gucci","Cartier"};
 
     String[] rolex = {"Rolex GMT Master II Batman", "Rolex GMT Master II Pepsi",
-            "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear", "Rolex Submarine Hulk",
-    "Rolex Submarine Bluesy"};
+            "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear",
+            "Rolex Submarine Hulk", "Rolex Submarine Bluesy"};
+
+    String[] omega = {"Speedmaster Moon Watch","Omega Seamaster"};
 
     @GetMapping("/healthcheck")
     public String healthCheck(){
@@ -30,5 +32,8 @@ public class ControllerService {
     public List getRolexModels(){
         return Arrays.asList(rolex);
     }
+
+    @GetMapping("/watch/omega")
+    public List getOmegaModels(){ return Arrays.asList(omega);}
 
 }

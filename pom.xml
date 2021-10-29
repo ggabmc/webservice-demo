@@ -54,7 +54,6 @@
                             <filesets>
                                 <fileset>
                                     <directory>${project.basedir}/jar-deploy-to-gcp</directory>
-                                    <includes>*.jar</includes>
                                 </fileset>
                             </filesets>
                         </configuration>
@@ -62,26 +61,27 @@
                 </executions>
             </plugin>
 
+
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
                     <execution>
-                        <id>copy-resource-one</id>
-                        <phase>generate-sources</phase>
+                        <id>copy-resources</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/jar-deploy-to-gcp</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${basedir}/target</directory>
                                     <includes>
-                                        <include>*.jar</include>
+                                        <include>webservice-demo-0.0.1-SNAPSHOT.jar</include>
                                     </includes>
                                 </resource>
                             </resources>
+                            <outputDirectory>${basedir}/jar-deploy-to-gcp</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
