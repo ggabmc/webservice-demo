@@ -14,13 +14,17 @@ public class ControllerService {
 
     Logger logger = LoggerFactory.getLogger(ControllerService.class);
 
-    String[] brands = {"Rolex","Omega","Tag Heuer","Hublot","Gucci","Cartier"};
+    StringBuilder brands = new StringBuilder().append("Rolex")
+            .append("Omega").append("Tag Heuer").append("Hublot")
+            .append("Gucci").append("Cartier");
 
-    String[] rolex = {"Rolex GMT Master II Batman", "Rolex GMT Master II Pepsi",
-            "Rolex Submarine Date", "Rolex Daytona Gold", "Rolex RootBear",
-            "Rolex Submarine Hulk", "Rolex Submarine Bluesy"};
+    StringBuilder rolex = new StringBuilder().append("Rolex GMT Master II Batman")
+            .append("Rolex GMT Master II Pepsi").append("Rolex Submarine Date").append("Rolex Daytona Gold")
+            .append("Rolex RootBear").append("Rolex Submarine Hulk").append("Rolex Submarine Bluesy");
 
-    String[] omega = {"Speedmaster Moon Watch","Omega Seamaster","Speedmaster Race"};
+    StringBuilder omega = new StringBuilder().append("Speedmaster Moon Watch")
+            .append("Omega Seamaster").append("Speedmaster Race");
+
 
     @GetMapping("/healthcheck")
     public String healthCheck(){
@@ -37,13 +41,13 @@ public class ControllerService {
 
     @GetMapping("/watch/rolex")
     public List getRolexModels(){
-        logger.info(String.valueOf(Arrays.asList(rolex)));
+        logger.info(rolex.toString());
         return Arrays.asList(rolex);
     }
 
     @GetMapping("/watch/omega")
     public List getOmegaModels(){
-        logger.info(String.valueOf(Arrays.asList(omega)));
+        logger.info(omega.toString());
         return Arrays.asList(omega);}
 
 }
