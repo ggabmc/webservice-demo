@@ -37,13 +37,13 @@ public class ControllerService {
 
     @GetMapping("/watch/rolex")
     public List getRolexModels(){
-        logger.info(rolex.toString());
+        logger.info(String.valueOf(rolex));
         return Arrays.asList(rolex);
     }
 
     @GetMapping("/watch/omega")
     public List getOmegaModels(){
-        logger.info(omega.toString());
+        logger.info(String.valueOf(omega));
         return Arrays.asList(omega);}
 
 }
