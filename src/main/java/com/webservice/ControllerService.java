@@ -26,28 +26,28 @@ public class ControllerService {
     @GetMapping("/healthcheck")
     public String healthCheck(){
         String message = "webservice-demo is up and running!";
-        logger.info(message);
+        logger.info(": : : {} : : : ",message);
         return message;
     }
 
     @GetMapping("/watch/brands")
     public List getBrands(){
         List<String> brandList = Arrays.asList(brands);
-        logger.info(brandList.toString());
+        logger.info(": : : Watch Brands List : : : {}",brandList.toString());
         return brandList;
     }
 
     @GetMapping("/watch/rolex")
     public List getRolexModels(){
         List<String> rolexList = Arrays.asList(rolex);
-        logger.info(rolexList.toString());
+        logger.info(": : : Rolex List : : : {}",rolexList.toString());
         return rolexList;
     }
 
     @GetMapping("/watch/omega")
     public List getOmegaModels(){
         List<String> omegaList = Arrays.asList(omega);
-        logger.info(omegaList.toString());
+        logger.info(": : :  Omega List : : : {}", omegaList.toString());
         return omegaList;
     }
 
