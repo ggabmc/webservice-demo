@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta23
+kind: Config
+metadata:
+  name: webservice-demo
+build:
+  artifacts:
+  - image: gcr.io/ws-kubernetes-331002/webservice-demo
+    context: .
+    jib:
+      project: com.webservice:webservice-demo
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/ingress-service.yaml
+    - kubernetes/webservice-demo-cluster-ip-service.yaml
+    - kubernetes/webservice-demo-deployment.yaml
