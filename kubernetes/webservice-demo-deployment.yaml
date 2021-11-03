@@ -21,6 +21,6 @@ spec:
       containers:
         - name: webservice
           #image: ggabmc/webservice-demo   # (Docker hub)
-          image: gcr.io/ws-kubernetes-331002/webservice-demo # (GCP Container Registry)
+          image: gcr.io/ws-kubernetes-331004/webservice-demo # (GCP Container Registry)
           ports:
             - containerPort: 8080
