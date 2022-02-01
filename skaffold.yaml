@@ -1,13 +1,17 @@
 apiVersion: skaffold/v2beta23
+
 kind: Config
+
 metadata:
   name: webservice-demo
+
 build:
   artifacts:
-  - image: gcr.io/ws-kubernetes-331103/webservice-demo
+  - image: gcr.io/ws-kubernetes-340002/webservice-demo
     context: .
     jib:
       project: com.webservice:webservice-demo
+
 deploy:
   kubectl:
     manifests:

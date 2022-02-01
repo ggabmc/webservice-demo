@@ -1,22 +1,25 @@
-apiVersion: apps/v1
+apiVersion: apps/v1  # Each API Version defines a different set of 'objects' we can use  (controllerRevision, StatefulSet)
 
+# kind: Pod    =  >  use to run one  or more related containers
 kind: Deployment
 
 metadata:
-  name: ws-deployment
+  name: ws-deployment   # Variable custom name
 
 spec:
-  replicas: 3    # creating 1 pod wit all the next template down here
+  replicas: 3       # the number of  pods running with the same identical template
 
   selector:
-    matchLabels:
+    matchLabels:   # it will look for specific label
       component: ws
 
   template:
     metadata:
-      labels:
+      labels:       #  we could have multiple labels assigned to our deployment
         component: ws
-
+        component1: ws1
+        component2: ws2
+        component3: ws3
     spec:
       containers:
         - name: webservice

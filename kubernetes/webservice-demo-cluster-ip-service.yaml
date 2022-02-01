@@ -1,16 +1,19 @@
-apiVersion: v1
+apiVersion: v1 # Each API Version defines a different set of 'objects' we can use  (componentStatus, endpoints, namespace, event, configMap, pod)
 
-kind: Service
+kind: Service   #  use to setting up a networking (for webservice-demo)  inside of our kubernetes
 
 metadata:
-  name: ws-cluster-ip-service
+  name: ws-cluster-ip-service  # Variable custom name
 
 spec:
-  type: ClusterIP
+  type: ClusterIP   # type of service could be (ClusterIP, nodePort, LoadBalancer, ingress) ClusterIP = communication between other pods inside in the cluster
+  #type: NodePort
 
   selector:
-    component: ws
+    component: ws    # Will look for any other PODS or any other object that is running  that has key value pair and direct all traffic to these next ports below
 
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8080              # If another pod inside the application needs access to webservice-demo it will use this port  (ex: wellsfargo-ws)
+      targetPort: 8080    #  we are sending any incoming traffic into port webservice-demo (containerPort: 8080)
+      #nodePort: 31515  # its the port that developer will access from the browser whenever we want to test out the container running in that pod
+      #nodePort doesnt not apply for ClusterIP type configuration

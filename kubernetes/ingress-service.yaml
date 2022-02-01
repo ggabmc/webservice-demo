@@ -1,25 +1,49 @@
 apiVersion: networking.k8s.io/v1
-# UPDATE API
-kind: Ingress
+
+kind: Ingress  # getting traffic to the cluster
+
 metadata:
   name: ingress-service
+
   annotations:
-    kubernetes.io/ingress.class: 'nginx'
-    nginx.ingress.kubernetes.io/use-regex: 'true'
-    # ADD ANNOTATION
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-    # UPDATE ANNOTATION
+    kubernetes.io/ingress.class: 'nginx'   # Telling  kubernetes that want to create and nginx controller base on the  nginx project
+    nginx.ingress.kubernetes.io/use-regex: 'true'   #
+    nginx.ingress.kubernetes.io/rewrite-target: /$1  # how the actual nginx copy behaves
+
 spec:
   rules:
     - http:
-        paths:
+        paths:          # nginx will connect the incoming traffic to different clusters-service
+
           - path: /?(.*)
-            # UPDATE PATH
             pathType: Prefix
-            # ADD PATHTYPE
             backend:
               service:
-                # UPDATE SERVICE FIELDS
                 name: ws-cluster-ip-service
                 port:
                   number: 8080
+
+          - path: /api/
+            pathType: Prefix
+            backend:
+                service:
+                  name: server-cluster-ip-service
+                  port:
+                    number: 8081
+
+#  NOTE:  we are using ingress-nginx not kubernetes-ingress
+
+
+#                                                                   Node Using Nginx Ingress
+#
+#                                                                           ----->          Service
+#                              Something that
+#   Traffic                accepts incoming                ----->          Service
+#                                     Traffic
+#                                          ^
+#                                         |
+#                             Ingress Controller               <------          Ingress Config
+#                                         |                                                               |
+#                                         V                                                               V
+#                             Watches for changes to the                  Object that has a set of configurations
+#                             ingress and updates                                Rules describing how traffic should be routed
