@@ -23,13 +23,13 @@ spec:
                 port:
                   number: 8080
 
-          - path: /api/
-            pathType: Prefix
-            backend:
-                service:
-                  name: server-cluster-ip-service
-                  port:
-                    number: 8081
+#          - path: /api/
+#            pathType: Prefix
+#            backend:
+#                service:
+#                  name: server-cluster-ip-service
+#                  port:
+#                    number: 8081
 
 #  NOTE:  we are using ingress-nginx not kubernetes-ingress
 

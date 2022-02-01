@@ -17,13 +17,13 @@ spec:
     metadata:
       labels:       #  we could have multiple labels assigned to our deployment
         component: ws
-        component1: ws1
-        component2: ws2
-        component3: ws3
+#        component1: ws1
+#        component2: ws2
+#        component3: ws3
     spec:
       containers:
         - name: webservice
           #image: ggabmc/webservice-demo   # (Docker hub)
-          image: gcr.io/ws-kubernetes-331103/webservice-demo # (GCP Container Registry)
+          image: gcr.io/ws-kubernetes-340018/webservice-demo # (GCP Container Registry)
           ports:
             - containerPort: 8080
