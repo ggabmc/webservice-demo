@@ -9,4 +9,4 @@ COPY ${JAR_FILE} webservice-demo.jar
 
 ENTRYPOINT ["java" , "-jar" , "webservice-demo.jar"]
 
-EXPOSE 8080
+#EXPOSE 8080
