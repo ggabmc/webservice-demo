@@ -96,8 +96,9 @@
                 <version>3.1.4</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/ws-kubernetes-340018/webservice-demo</image> <!-- Sending image to GCP Container Registry Repository -->
+                        <image>gcr.io/ws-kubernetes-340118/webservice-demo</image> <!-- Sending image to GCP Container Registry Repository -->
                         <!--<image>docker.io/ggabmc/webservice-demo</image>--><!-- Sending image to Docker Hub Repository -->
+                        <!--<image>registry.gitlab.com/ggabmc/webservice-demo</image>-->
                     </to>
                 </configuration>
             </plugin>
