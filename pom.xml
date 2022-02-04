@@ -90,6 +90,8 @@
                 </executions>
             </plugin>
 
+            <!--  Plugin will help to send the image to GCP, Docker Hub repository along with the kubernetes
+             plugin (Intellij) CI/CD  kubernetes support will create a skaffold.yaml file-->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
